@@ -1,0 +1,151 @@
+.main {
+  background: url(../images/bg.png) repeat center center;
+  padding: 60px 0 120px;
+  text-align: center;
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 19px;
+    letter-spacing: 3.6px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-size: 86px;
+    line-height: 90px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 100px;
+    position: relative;
+
+    &::before {
+      @include pos($l: -40px, $t: 120px);
+      @include size(50px);
+
+      content: "";
+      background: url(../images/rectangle.png) no-repeat;
+    }
+
+    &::after {
+      @include pos($r: 175px, $t: -40px);
+      @include size(30px);
+
+      content: "";
+      background: url(../images/plus.png) no-repeat;
+    }
+  }
+}
+
+.slider {
+  margin-left: 135px;
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__item {
+    height: 400px;
+    // min-width: 440px;
+    max-width: 440px;
+    // margin: 0 20px;
+    margin-right: 40px;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+
+    &:hover .slider__info {
+      top: 0;
+    }
+  }
+
+  &__info {
+    @include size(100%);
+    @include pos($t: -100%, $l: 0);
+    background-color: rgba($color: #1bf1ad, $alpha: 0.9);
+    text-align: left;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 290px 30px 0;
+    transition: all 0.5s;
+  }
+
+  &__title {
+    font-size: 28px;
+    line-height: 24px;
+    letter-spacing: 5.6px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  &__author {
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 2.4px;
+  }
+
+  &__img {
+    min-width: 100%;
+  }
+
+  &__notactive {
+    @include size(100%);
+    @include pos($t: 0, $l: 0);
+    background-color: rgba($color: #fff, $alpha: 0.5);
+  }
+
+  &__arows {
+    width: 100%;
+    @include align($pos: relative);
+  }
+
+  &__prev,
+  &__next {
+    @include size(90px);
+    @include pos($t: 150px, $z: 4);
+    font-size: 70px;
+    font-weight: 200;
+    border: 2px solid #000;
+    border-radius: 50%;
+    line-height: 90px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #e98457;
+      border-color: #e98457;
+    }
+
+    // &::before {
+    //   @include size(110px, 400px);
+    //   @include pos($t: -152px, $l: -8px, $z: 1);
+
+    //   content: "";
+    //   background-color: #fff;
+    //   opacity: 0;
+    //   pointer-events: none;
+    // }
+
+    // &:hover.slider__next::before {
+    //   opacity: 0.5;
+    // }
+  }
+
+  &__prev {
+    left: 20px;
+  }
+
+  &__next {
+    right: 20px;
+  }
+}
+
+// неактивные слайдеры не в фокусе
+.slick-active {
+  .slider__notactive {
+    opacity: 0;
+  }
+}

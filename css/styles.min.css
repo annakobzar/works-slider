@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap");
+:root {
+  --font: "Poppins", sans-serif;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font);
+}
+
+.main {
+  background: url(../images/bg.png) repeat center center;
+  padding: 60px 0 120px;
+  text-align: center;
+}
+
+.main__subtitle {
+  font-size: 18px;
+  line-height: 19px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  color: #303030;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.main__title {
+  font-size: 86px;
+  line-height: 90px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.main__title::before {
+  position: absolute;
+  top: 120px;
+  left: -40px;
+  width: 50px;
+  height: 50px;
+  content: "";
+  background: url(../images/rectangle.png) no-repeat;
+}
+
+.main__title::after {
+  position: absolute;
+  top: -40px;
+  right: 175px;
+  width: 30px;
+  height: 30px;
+  content: "";
+  background: url(../images/plus.png) no-repeat;
+}
+
+.slider {
+  margin-left: 135px;
+}
+
+.slider__wrap {
+  position: relative;
+}
+
+.slider__item {
+  height: 400px;
+  max-width: 440px;
+  margin-right: 40px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider__item:hover .slider__info {
+  top: 0;
+}
+
+.slider__info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: rgba(27, 241, 173, 0.9);
+  text-align: left;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 290px 30px 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.slider__title {
+  font-size: 28px;
+  line-height: 24px;
+  letter-spacing: 5.6px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.slider__author {
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 2.4px;
+}
+
+.slider__img {
+  min-width: 100%;
+}
+
+.slider__notactive {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slider__arows {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.slider__prev, .slider__next {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 150px;
+  z-index: 4;
+  font-size: 70px;
+  font-weight: 200;
+  border: 2px solid #000;
+  border-radius: 50%;
+  line-height: 90px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.slider__prev:hover, .slider__next:hover {
+  color: #e98457;
+  border-color: #e98457;
+}
+
+.slider__prev {
+  left: 20px;
+}
+
+.slider__next {
+  right: 20px;
+}
+
+.slick-active .slider__notactive {
+  opacity: 0;
+}
+/*# sourceMappingURL=styles.min.css.map */
